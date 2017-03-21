@@ -144,7 +144,7 @@ class iCalUtilityFunctions {
         continue;
       if( $date > $dateNow )
         break;
-      if( TRUE !== $trans['isdst'] ) {
+      if( TRUE !== $trans['isdst'] || in_array($timezone, array("Australia/Brisbane", "Australia/Perth"))) {
         $stdDTSTART    = $trans['time'];
         $stdTZOFFSETTO = $dlghtTZOFFSETFROM = iCalUtilityFunctions::offsetSec2His( $trans['offset'] );
         $stdTZNAME     = $trans['abbr'];
